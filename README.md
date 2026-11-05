@@ -1,31 +1,32 @@
-# session_crawler.py with Dynamic Pagination
+# Session-Based Data Synchronization Engine
 
-A production-ready Python web scraper designed to extract data from websites requiring user authentication. It bypasses basic CSRF-token protections, maintains login sessions efficiently via HTTP cookies, and processes multi-page catalogs.
+A production-ready Python data management component designed to synchronize catalog structures from enterprise web platforms requiring active user sessions. It handles dynamic authorization token lifecycles, manages cookie persistence via stateful HTTP connections, and processes complex multi-page data matrix layers efficiently.
 
 ## ⚡ Key Features
 
-*   **Session Persistence:** Uses `requests.Session` to maintain authorization cookies across all requests, eliminating browser overhead.
-*   **CSRF Bypass:** Automatically extracts and injects dynamic CSRF tokens during the login handshake.
-*   **Dynamic Pagination:** Includes a robust `while` loop architecture to automatically detect and follow "Next page" links until the catalog is fully extracted.
-*   **Database Optimization:** Implements bulk data insertion using SQLite's `executemany()` to minimize disk I/O operations and maximize performance.
+- **Session Persistence:** Utilizes `requests.Session` architecture to maintain authenticated connection parameters across multiple requests, reducing network overhead.
+- **Token Authorization Management:** Automatically extracts and maps dynamic session tokens during the secure connection handshake.
+- **Dynamic Catalog Traversal:** Implements a robust pagination state architecture to track and process subsequent structural layers automatically until the complete data entity is processed.
+- **Database Architecture Optimization:** Executes high-performance batch data insertion leveraging database driver core methods to eliminate I/O overhead and guarantee transactional integrity.
 
-## ⚙️ Tech Stack
+## ⚙ Tech Stack
 
-*   **Engine:** Python 3.10+
-*   **HTTP Client:** Requests (Session-based)
-*   **HTML Parser:** BeautifulSoup4
-*   **Storage:** SQLite3 (Embedded database)
+- **Core Engine:** Python 3.10+
+- **HTTP Client Layer:** Requests (Session-driven)
+- **Data Parser Layer:** BeautifulSoup4
+- **Persistence Storage:** SQLite3 / Schema Agnostic Data Stores
 
-## 🛠️ Quick Start
+## 🛠 Quick Start
 
-1. Install dependencies:
+1. Install required core dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-2. Run the scraper:
+2. Execute the data synchronization job:
    ```bash
-   python session_crawler.py  
+   python session_crawler.py
    ```
 
-## 📊 Database Output
-After execution, the script automatically creates a localized `shop_products.db` file with structured, duplicate-free data.
+## 📊 Persistence Output
+
+Upon pipeline termination, the engine creates a structured database storage file containing standardized, schema-validated, and duplicate-free information matrices.
